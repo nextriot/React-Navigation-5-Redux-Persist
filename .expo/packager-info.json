@@ -1,9 +1,9 @@
 {
-  "devToolsPort": 19003,
-  "expoServerPort": 19004,
-  "packagerPort": 19005,
-  "packagerPid": 90668,
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 97138,
   "expoServerNgrokUrl": "https://k5-fkc.kanguru.react-navigation-5-redux-persist.exp.direct",
   "packagerNgrokUrl": "https://packager.k5-fkc.kanguru.react-navigation-5-redux-persist.exp.direct",
-  "ngrokPid": 90679
+  "ngrokPid": 97149
 }
