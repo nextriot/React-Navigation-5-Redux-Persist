@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import { Provider } from 'react-redux';
 import store from './store/store';
 import { NavigationNativeContainer } from '@react-navigation/native';
@@ -10,22 +10,32 @@ const Stack = createStackNavigator()
 const WithNavigator = () => (
   <NavigationNativeContainer>
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={() => <Text>Open up App.tsx to start working on your app!</Text>} />
+      <Stack.Screen name="Home" component={(props) => (
+        <View style={[styles.container, { backgroundColor: '#11FFFF'}]}>
+          <Text>Open up App.tsx to start working on your app!</Text>
+          <Button title="Go To Dashboard" onPress={() => props.navigation.navigate('Dashboard')} />
+        </View>
+      )} />
+       <Stack.Screen name="Dashboard" component={() => (
+        <View style={[styles.container, { backgroundColor: '#FF11FF' }]}>
+          <Text>Open up App.tsx to start working on your app!</Text>
+        </View>
+      )} />
     </Stack.Navigator>
   </NavigationNativeContainer>
 )
 
 const WithoutNavigator = () => (
-  <Text>Open up App.tsx to start working on your app!</Text>
+  <View style={styles.container}>
+    <Text>Open up App.tsx to start working on your app!</Text>
+  </View>
 )
 
 export default function App() {
   return (
     <Provider store={store}>
-      <View style={styles.container}>
-        <WithoutNavigator />
-        {/* <WithNavigator /> */}
-      </View>
+      {/* <WithoutNavigator /> */}
+      <WithNavigator />
     </Provider>
   );
 }
